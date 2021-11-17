@@ -1,9 +1,12 @@
-const userPassword = prompt('Please enter the password.');
+let attempts = 0;
 
-function checkPassword(userPassword) {
+while (attempts < 3) {
+  let userPassword = prompt('Please enter the password.');
   if (userPassword === 'myPassword1!') {
-    return alert('the password is correct!');
+    console.log('the password is correct!');
+    break;
+  } else {
+    ++attempts;
+    console.log('the password is incorrect!');
   }
 }
-
-checkPassword(userPassword);
